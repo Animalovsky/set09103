@@ -1,12 +1,13 @@
 <html>
 <head>
-<title>Online Catalogue</title>
+<title>{{ title }}</title>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
 <link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
 </head>
 <body>
 <header>
 	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
+	
 	<ul>
 		<a href="#"><li>Artists</li></a>
 		<a href="#"><li>Albums</li></a>
@@ -14,62 +15,26 @@
 	</ul>
 </header>
 <div class="album">
-	{% for item in results[0:1] %}
-		<p><a href="{{ item.url }}">{{ item.artist_name }} -</a>
-	{% endfor %}
-	{% for item in results[0:1] %}
-		
-		<a href="{{ item.url }}">{{ item.album_name }}</a>
-	{% endfor %}
-	{% for item in results[0:1] %}
-		 ({{ item.date_of_release }})</p>
-	{% endfor %}
-	{% for item in results[0:1] %}
+	{% for item in results[:1] %}
+		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
 		<img src="{{ item.img }}"></img>
 	{% endfor %}
 </div>
 <div class="album">
 	{% for item in results[1:2] %}
-		<p><a href="{{ item.url }}">{{ item.artist_name }} -</a>
-	{% endfor %}
-	{% for item in results[1:2] %}
-		
-		<a href="{{ item.url }}">{{ item.album_name }}</a>
-	{% endfor %}
-	{% for item in results[1:2] %}
-		 ({{ item.date_of_release }})</p>
-	{% endfor %}
-	{% for item in results[1:2] %}
+		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
 		<img src="{{ item.img }}"></img>
 	{% endfor %}
 </div>
 <div class="album">
 	{% for item in results[2:3] %}
-		<p><a href="{{ item.url }}">{{ item.artist_name }} -</a>
-	{% endfor %}
-	{% for item in results[2:3] %}
-		
-		<a href="{{ item.url }}">{{ item.album_name }}</a>
-	{% endfor %}
-	{% for item in results[2:3] %}
-		 ({{ item.date_of_release }})</p>
-	{% endfor %}
-	{% for item in results[2:3] %}
+		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
 		<img src="{{ item.img }}"></img>
 	{% endfor %}
 </div>
 <div class="album">
 	{% for item in results[3:4] %}
-		<p><a href="{{ item.url }}">{{ item.artist_name }} -</a>
-	{% endfor %}
-	{% for item in results[3:4] %}
-		
-		<a href="{{ item.url }}">{{ item.album_name }}</a>
-	{% endfor %}
-	{% for item in results[3:4] %}
-		 ({{ item.date_of_release }})</p>
-	{% endfor %}
-	{% for item in results[3:4] %}
+		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
 		<img src="{{ item.img }}"></img>
 	{% endfor %}
 </div>
