@@ -14,30 +14,12 @@
 		<a href="#"><li>Genre</li></a>
 	</ul>
 </header>
+	{% for item in results %}
 <div class="album">
-	{% for item in results[:1] %}
-		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
+		<p><a href=/{{ item.artist_name }}>{{ item.artist_name }}</a> - {{ item.album_name }} ({{ item.date_of_release }})</p>
 		<img src="{{ item.img }}"></img>
-	{% endfor %}
 </div>
-<div class="album">
-	{% for item in results[1:2] %}
-		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
-		<img src="{{ item.img }}"></img>
 	{% endfor %}
-</div>
-<div class="album">
-	{% for item in results[2:3] %}
-		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
-		<img src="{{ item.img }}"></img>
-	{% endfor %}
-</div>
-<div class="album">
-	{% for item in results[3:4] %}
-		<p>{{ item.artist_name }} - {{ item.album_name }} ({{ item.date_of_release }})</p>
-		<img src="{{ item.img }}"></img>
-	{% endfor %}
-</div>
 </body>
 </html>
 

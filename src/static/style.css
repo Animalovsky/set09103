@@ -45,13 +45,13 @@ a{
 	text-decoration:none;
 	color:inherit;
 }
-@font-face {
-    font-family: Adam;
-    src: url('fonts/ADAM.CGPRO.otf');
-}
+@font-face { 
+    font-family: Adam; 
+    src: url("fonts/ADAMCGPRO.otf"); 
+} 
 
 body{
-	margin:0px;
+	margin:0;
 	font-family: 'Adam';
 	background: url("images/background.png"); 
 }
