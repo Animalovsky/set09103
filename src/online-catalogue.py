@@ -39,7 +39,7 @@ def artist(artist_name):
         {'artist_name': 'S.O.A.D', 'album_name': 'Toxicity', 'date_of_release': '2001', 'img': 'http://localhost:5000/static/images/eminem_relapse.jpg', 'genre': 'rock'},
         {'artist_name': 'Korn', 'album_name': 'Life is Peachy', 'date_of_release': '1996', 'img': 'http://localhost:5000/static/images/eminem_relapse.jpg', 'genre': 'rock'},
 		{'artist_name': 'Michael_Jackson', 'album_name': 'Thriller', 'date_of_release': '1982', 'img': 'http://localhost:5000/static/images/eminem_relapse.jpg', 'genre': 'rock'}
-	]
+	
     return render_template("artist.html", artist=artist, albums=albums, artist_name=artist_name)	
 	
 @app.route('/albums/')
