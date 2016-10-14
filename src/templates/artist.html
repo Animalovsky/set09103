@@ -13,6 +13,37 @@
 		<a href="#"><li>Genre</li></a>
 	</ul>
 </header>
-Hello artist page <a href="/'{{ art }}'">{{ art }}</a>.
+
 </body>
 </html>
+
+
+{% if artist %}
+
+{% for artist in artist if artist.artist_name == artist_name %}
+	<img src="{{ artist.img }}" width=100%></img>
+{% endfor %}
+
+{% endif %}
+
+
+{% if artist %}
+<div class="artist-page">
+{% for artist in artist if artist.artist_name == artist_name %}
+<h1>{{ artist.artist_name }}</h1>
+	<p>{{ artist.bio }}</p>
+	<p>{{ artist.date_of_release }}</p>
+{% endfor %}
+
+{% endif %}
+<h1>albums</h1>
+
+{% if albums %}
+<ul>
+{% for item in albums if item.artist_name == artist_name %}
+    <li>{{ item.album_name }}</li>
+    <li>{{ item.date_of_release}}</li>
+{% endfor %}
+</ul>
+{% endif %}
+</div>

@@ -1,0 +1,27 @@
+<html>
+<head>
+<title>{{ title }}</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+</head>
+<body>
+<header>
+	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
+	
+	<ul>
+		<a href="#"><li>Artists</li></a>
+		<a href="/albums/"><li>Albums</li></a>
+		<a href="#"><li>Genre</li></a>
+	</ul>
+	
+</header>
+	{% for item in results %}
+<div class="album">
+		<p><a href=/{{ item.artist_name }}>{{ item.artist_name }}</a> - {{ item.album_name }} ({{ item.date_of_release }})</p>
+		<img src="{{ item.img }}"></img>
+		<p>{{ item.genre }}</p>
+</div>
+	{% endfor %}
+</body>
+</html>
+

@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Carrois+Gothic+SC|Julius+Sans+One|Mada|Scada');
+
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
@@ -15,7 +17,6 @@ time, mark, audio, video {
 	padding: 0;
 	border: 0;
 	font-size: 100%;
-	font: inherit;
 	vertical-align: baseline;
 }
 /* HTML5 display-role reset for older browsers */
@@ -45,14 +46,11 @@ a{
 	text-decoration:none;
 	color:inherit;
 }
-@font-face { 
-    font-family: Adam; 
-    src: url("fonts/ADAMCGPRO.otf"); 
-} 
 
 body{
 	margin:0;
-	font-family: 'Adam';
+font-family: 'Carrois Gothic SC', sans-serif;
+text-transform:uppercase;
 	background: url("images/background.png"); 
 }
 header{
@@ -64,22 +62,55 @@ header{
 	font-size:30pt;
 	background: url("images/header-background.png") no-repeat; 
 }
+
 ul{
 	list-style:none;
 	
+}
+h1{
+	font-size:18pt;
+}
+h2{
+	font-size:14pt;
 }
 ul li{
 	text-decoration:none;
 	display:inline;
 	padding:10px;
-	font-size:15pt;
+	font-size:18pt;
 }
-.album {
-	width:24%;
+.artist {
+	width:30%;
 	display:inline-block;
 	text-align:center;
-	padding-top:2%;
+	padding:1%;
+}
+.artist img {
+padding-top:2%;
+padding-bottom:2%;
+width:60%;
+}
+.artist-page{
+	text-align:center;
+}
+.artist-page img{
+	width:100%;
+}
+.artist-page p{
+	text-align:left;
+	line-height:1.5em;
+	width:70%;
+	margin-left:auto;
+	margin-right:auto;
+}
+.album {
+	width:17%;
+	display:inline-block;
+	text-align:center;
+	padding:1%;
 }
 .album img {
 padding-top:2%;
+padding-bottom:2%;
+width:60%;
 }
