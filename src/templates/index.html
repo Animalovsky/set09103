@@ -1,14 +1,14 @@
 <html>
 <head>
-<title>{{ title }}</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Online Music Catalogue</title>
 <link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <header>
 	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
 	<ul>
-		<a href="/albums/"><li>Albums</li></a>
+		<a href="/all_artists/albums/"><li>Albums</li></a>
 		<a href="#"><li>Genre</li></a>
 	</ul>
 </header>

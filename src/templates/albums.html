@@ -1,22 +1,21 @@
 <html>
 <head>
-<title>{{ title }}</title>
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<title>Albums</title>
 <link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
 <header>
 	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
 	<ul>
-		<a href="/albums/"><li>Albums</li></a>
+		<a href="/all_artists/albums/"><li>Albums</li></a>
 		<a href="#"><li>Genre</li></a>
 	</ul>
 </header>
-
 <!--Loop to display all the albums in json-->
 	{% for item in results %}
 <div class="album">
-		<p><a href=/{{ item.artist_name }}>{{ item.artist_name }}</a> - {{ item.album_name }} ({{ item.date_of_release }})</p>
+		<p><a href=/{{ item.artist_name }}>{{ item.artist_name }}</a> - <a href=/{{ item.artist_name }}/{{ item.album_name }}>{{ item.album_name }}</a> ({{ item.date_of_release }})</p>
 		<img src="{{ item.img }}"></img>
 		<p>{{ item.genre }}</p>
 </div>
