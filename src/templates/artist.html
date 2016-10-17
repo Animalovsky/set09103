@@ -35,7 +35,7 @@
 <!--This is a loop for the artist albums-->
 	{% for item in albums if item.artist_name == artist_name %}
 	<div class="artist-album">
-		<a href=/{{ item.artist_name }}/{{ item.album_name }}>{{ item.album_name }}</a> ({{ item.date_of_release }})
+		<a href=/{{ item.artist_name.replace(" ","%20") }}/{{ item.album_name.replace(" ","%20") }}>{{ item.album_name }}</a> ({{ item.date_of_release }})
 		<img src="{{ item.img }}"></img>
 	</div>
 	{% endfor %}
