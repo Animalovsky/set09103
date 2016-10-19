@@ -1,0 +1,31 @@
+<html>
+<head>
+<title>{{ genre }}</title>
+<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+<meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+<header>
+	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
+	<ul>
+		<a href="{{ url_for('index') }}"><li>Artists</li></a>
+		<a href="/all_artists/albums/"><li>Albums</li></a>
+		<a href="/genres/"><li>Genres</li></a>
+	</ul>
+</header>
+<div class="header">
+	<h1>{{ genre }} Albums</h1>
+</div>
+<!--Loop to chosen genre in music-->
+	{% for albums in results if albums.genre == genre %}
+<div class="album">
+		<p><a href=/{{ albums.artist_name.replace(" ","%20") }}>{{ albums.artist_name }}</a> - <a href=/{{ albums.artist_name.replace(" ","%20") }}/{{ albums.album_name.replace(" ","%20") }}>{{ albums.album_name }}</a> ({{ albums.date_of_release }})</p>
+		<a href=/{{ albums.artist_name.replace(" ","%20") }}><img src="{{ albums.img }}"></img></a>
+</div>
+	{% endfor %}
+
+<footer>
+	<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
+</footer>
+</body>
+</html>

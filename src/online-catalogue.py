@@ -1,23 +1,23 @@
-from  flask  import  Flask , render_template, jsonify, json
+from  flask  import  Flask , render_template, jsonify, json, url_for
+
 app = Flask(__name__)
-import urllib
 
 # This is an index route.
 @app.route('/')
-def index(charset='utf-8'):
+def index():
     artists = [
-        {'artist_name': 'Nirvana', 'img': 'static/images/nirvana.png', 'genre': 'rock'},
-        {'artist_name': 'Eminem', 'img': 'static/images/eminem.png', 'genre': 'rap'},
-        {'artist_name': 'Adele', 'img': 'static/images/adele.png', 'genre': 'pop'},
-        {'artist_name': 'Korn', 'img': 'static/images/korn.png', 'genre': 'rock'},
-		{'artist_name': 'Michael Jackson', 'img': 'static/images/mj.png', 'genre': 'pop'},
-		{'artist_name': 'Kendrick Lamar', 'img': 'static/images/kl.png', 'genre': 'rap'}
-    ]	
-    return render_template("index.html", results=artists).decode(charset)
+	    {'artist_name': 'Adele', 'img': 'static/images/adele.png', 'img2': 'static/images/adele-home.png', 'genre': 'pop'},
+        {'artist_name': 'Eminem', 'img': 'static/images/eminem.png', 'img2': 'static/images/eminem-home.png', 'genre': 'rap'},
+		{'artist_name': 'Kendrick Lamar', 'img': 'static/images/kl.png', 'img2': 'static/images/kl-home.png', 'genre': 'rap'},
+        {'artist_name': 'Korn', 'img': 'static/images/korn.png', 'img2': 'static/images/korn-home.png', 'genre': 'rock'},
+		{'artist_name': 'Michael Jackson', 'img': 'static/images/mj.png', 'img2': 'static/images/mj-home.png', 'genre': 'pop'},
+		{'artist_name': 'Nirvana', 'img': 'static/images/nirvana.png', 'img2': 'static/images/nirvana-home.png', 'genre': 'rock'}
+    ]
+    return render_template("index.html", results=artists)
 	
 # This is an artist route.
 @app.route('/<artist_name>/')
-def artist(artist_name, charset='utf-8'):
+def artist(artist_name):
     artist = [
         {'artist_name': 'Nirvana', 'img': 'http://localhost:5000/static/images/nirvana-top.png', 'bio': "Nirvana was an American alternative rock band. They were one of the most successful and influential bands of that time. Since they formed, they have sold over 75 million records all over the world. They played a style of rock music known as grunge, which was highly influenced by 1980s alternative rock, 1970s punk, and heavy metal. Grunge became more commercially successful than the previous punk rock, as promoted to the world by Sub Pop Records. Nirvana greatly affected the style of other grunge bands such as Pearl Jam, Soundgarden, and Alice in Chains. They split up after their lead singer Kurt Cobain died in 1994 after he committed suicide. On April 10, 2014, Nirvana received a star in the Rock and Roll Hall of Fame."},
         {'artist_name': 'Eminem', 'img': 'http://localhost:5000/static/images/eminem-top2.png', 'bio': "To call Eminem hip-hop's Elvis is correct to a degree, but it's largely inaccurate. Certainly, Eminem was the first white rapper since the 'Beastie Boys' to garner both sales and critical respect, but his impact exceeded this confining distinction. On sheer verbal skills, Eminem was one of the greatest MCs of his generation rapid, fluid, dexterous, and unpredictable, as withering aside and thanks to his mentor Dr. Dre, he had music to match thick, muscular loops that evoked the terror and paraoia Em's music conjured."},
@@ -37,18 +37,18 @@ def artist(artist_name, charset='utf-8'):
 		{'artist_name': 'Korn', 'album_name': 'Follow the Leader', 'date_of_release': '1998', 'img': 'http://localhost:5000/static/images/korn_ftl.jpg', 'genre': 'rock'},
 		{'artist_name': 'Michael Jackson', 'album_name': 'Thriller', 'date_of_release': '1982', 'img': 'http://localhost:5000/static/images/mj_thriller.png', 'genre': 'pop'},
         {'artist_name': 'Michael Jackson', 'album_name': 'Bad', 'date_of_release': '1987', 'img': 'http://localhost:5000/static/images/mj_bad.png', 'genre': 'pop'},
-		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': '2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'pop'},
-        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'pop'}
+		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': '2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'rap'},
+        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'rap'}
     ]
-    return render_template("artist.html", artist=artist, albums=albums, artist_name=artist_name).decode(charset)	
+    return render_template("artist.html", artist=artist, albums=albums, artist_name=artist_name)
 
 # This is all the albums route.	
 @app.route('/all_artists/albums/')
-def albums(charset='utf-8'):
+def albums():
     albums = [
         {'artist_name': 'Nirvana', 'album_name': 'Nevermind', 'date_of_release': '1991', 'img': 'http://localhost:5000/static/images/nirvana_nvm.jpeg', 'genre': 'rock'},
 		{'artist_name': 'Nirvana', 'album_name': 'In Utero', 'date_of_release': '1993', 'img': 'http://localhost:5000/static/images/nirvana_inutero.jpg', 'genre': 'rock'},
-        {'artist_name': 'Eminem', 'album_name': 'Marshal Mathers LP', 'date_of_release': '2000', 'img': 'http://localhost:5000/static/images/eminem_mmlp.jpg'},
+        {'artist_name': 'Eminem', 'album_name': 'Marshal Mathers LP', 'date_of_release': '2000', 'img': 'http://localhost:5000/static/images/eminem_mmlp.jpg', 'genre': 'rap'},
 		{'artist_name': 'Eminem', 'album_name': 'Relapse', 'date_of_release': '2009', 'img': 'http://localhost:5000/static/images/eminem_relapse.jpg', 'genre': 'rap'},
 		{'artist_name': 'Adele', 'album_name': '21', 'date_of_release': '2011', 'img': 'http://localhost:5000/static/images/adele_21.jpg', 'genre': 'pop'},
 		{'artist_name': 'Adele', 'album_name': '25', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/adele_25.png', 'genre': 'pop'},
@@ -56,41 +56,52 @@ def albums(charset='utf-8'):
 		{'artist_name': 'Korn', 'album_name': 'Follow the Leader', 'date_of_release': '1998', 'img': 'http://localhost:5000/static/images/korn_ftl.jpg', 'genre': 'rock'},
 		{'artist_name': 'Michael Jackson', 'album_name': 'Thriller', 'date_of_release': '1982', 'img': 'http://localhost:5000/static/images/mj_thriller.png', 'genre': 'pop'},
         {'artist_name': 'Michael Jackson', 'album_name': 'Bad', 'date_of_release': '1987', 'img': 'http://localhost:5000/static/images/mj_bad.png', 'genre': 'pop'},
-		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': '2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'pop'},
-        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'pop'}
+		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': '2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'rap'},
+        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'rap'}
     ]
-    return render_template("albums.html", results=albums).decode(charset)
+    return render_template("albums.html", results=albums)
 	
 	# This is all the albums route.	
 @app.route('/<artist_name>/<album_name>/')
 def album(album_name, artist_name):
     album = [
         {'artist_name': 'Nirvana', 'album_name': 'Nevermind', 'date_of_release': 'September 24, 1991', 'img': 'http://localhost:5000/static/images/nirvana_nvm.jpeg', 'genre': 'rock', 'studio': 'DGC Records'},
-		{'artist_name': 'Nirvana', 'album_name': 'In Utero', 'date_of_release': '1993', 'img': 'http://localhost:5000/static/images/nirvana_inutero.jpg', 'genre': 'rock'},
-        {'artist_name': 'Eminem', 'album_name': 'Marshal Mathers LP', 'date_of_release': '2000', 'img': 'http://localhost:5000/static/images/eminem_mmlp.jpg'},
-		{'artist_name': 'Eminem', 'album_name': 'Relapse', 'date_of_release': '2009', 'img': 'http://localhost:5000/static/images/eminem_relapse.jpg', 'genre': 'rap'},
-		{'artist_name': 'Adele', 'album_name': '21', 'date_of_release': '2011', 'img': 'http://localhost:5000/static/images/adele_21.jpg', 'genre': 'pop'},
-		{'artist_name': 'Adele', 'album_name': '25', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/adele_25.png', 'genre': 'pop'},
-        {'artist_name': 'Korn', 'album_name': 'Life is Peachy', 'date_of_release': '1996', 'img': 'http://localhost:5000/static/images/korn_lip.jpg', 'genre': 'rock'},
-		{'artist_name': 'Korn', 'album_name': 'Follow the Leader', 'date_of_release': '1998', 'img': 'http://localhost:5000/static/images/korn_ftl.jpg', 'genre': 'rock'},
-		{'artist_name': 'Michael Jackson', 'album_name': 'Thriller', 'date_of_release': '1982', 'img': 'http://localhost:5000/static/images/mj_thriller.png', 'genre': 'pop'},
-        {'artist_name': 'Michael Jackson', 'album_name': 'Bad', 'date_of_release': '1987', 'img': 'http://localhost:5000/static/images/mj_bad.png', 'genre': 'pop'},
-		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': '2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'pop'},
-        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'pop'}
+		{'artist_name': 'Nirvana', 'album_name': 'In Utero', 'date_of_release': 'September 21, 1993', 'img': 'http://localhost:5000/static/images/nirvana_inutero.jpg', 'genre': 'rock', 'studio': 'DGC Records'},
+        {'artist_name': 'Eminem', 'album_name': 'Marshal Mathers LP', 'date_of_release': 'May 23, 2000', 'img': 'http://localhost:5000/static/images/eminem_mmlp.jpg', 'genre': 'rap', 'studio': 'Aftermath Entertainment, Interscope Records and Shady Records'},
+		{'artist_name': 'Eminem', 'album_name': 'Relapse', 'date_of_release': 'May 15, 2009', 'img': 'http://localhost:5000/static/images/eminem_relapse.jpg', 'genre': 'rap', 'studio': 'Aftermath Entertainment, Interscope Records and Shady Records'},
+		{'artist_name': 'Adele', 'album_name': '21', 'date_of_release': 'January 24, 2011', 'img': 'http://localhost:5000/static/images/adele_21.jpg', 'genre': 'pop', 'studio': 'XL and Columbia'},
+		{'artist_name': 'Adele', 'album_name': '25', 'date_of_release': '20 November 2015', 'img': 'http://localhost:5000/static/images/adele_25.png', 'genre': 'pop', 'studio': 'XL and Columbia'},
+        {'artist_name': 'Korn', 'album_name': 'Life is Peachy', 'date_of_release': 'October 15, 1996', 'img': 'http://localhost:5000/static/images/korn_lip.jpg', 'genre': 'rock', 'studio': 'Epic Records'},
+		{'artist_name': 'Korn', 'album_name': 'Follow the Leader', 'date_of_release': 'August 18, 1998', 'img': 'http://localhost:5000/static/images/korn_ftl.jpg', 'genre': 'rock', 'studio': 'Epic/Immortal Records'},
+		{'artist_name': 'Michael Jackson', 'album_name': 'Thriller', 'date_of_release': 'November 30, 1982', 'img': 'http://localhost:5000/static/images/mj_thriller.png', 'genre': 'pop', 'studio': 'Epic Records'},
+        {'artist_name': 'Michael Jackson', 'album_name': 'Bad', 'date_of_release': 'August 31, 1987', 'img': 'http://localhost:5000/static/images/mj_bad.png', 'genre': 'pop', 'studio': 'Epic Records'},
+		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': 'October 22, 2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'rap', 'studio': 'TDE, Aftermath Entertainment and Interscope Records'},
+        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': 'March 15, 2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'rap', 'studio': 'TDE, Aftermath Entertainment and Interscope Records'}
     ]
     tracks = [
-	    {'album_name': 'Nevermind', 'track': 'Smells like teen spirit, In Bloom', 'track1': 'In Bloom', 'track2': 'Come as you are'},
-		{'album_name': 'Relapse', 'track': 'Hello', 'track1': '3AM',},
+	    {'album_name': 'Nevermind', 1: 'Smells like teen spirit', 2: 'In Bloom', 3: 'Come as you are', 4: 'Breed', 5: 'Lithium', 6: 'Polly', 7: 'Territorial Pissings', 8: 'Drain You', 9: 'Lounge act', 10: 'Stay away', 11: 'On a plain', 12: 'Something in the way'},
+		{'album_name': 'Relapse', 1: 'Hello', 2: '3AM',},
 	]
     return render_template("album.html", album=album, album_name=album_name, artist_name=artist_name, tracks=tracks)
 	
-		# This is all the albums route.	
-@app.route('/<genre>')
+# This is all the albums route.	
+@app.route('/genres/')
+def genres():
+    albums = [
+		{'genre': 'pop'},
+		{'genre': 'rock'},
+        {'genre': 'rap'},
+    ]
+    return render_template("genres.html", results=albums, genre=genre)	
+	
+	
+# This is all the albums route.	
+@app.route('/genres/<genre>/')
 def genre(genre):
-    genrelist = [
+    albums = [
         {'artist_name': 'Nirvana', 'album_name': 'Nevermind', 'date_of_release': '1991', 'img': 'http://localhost:5000/static/images/nirvana_nvm.jpeg', 'genre': 'rock'},
 		{'artist_name': 'Nirvana', 'album_name': 'In Utero', 'date_of_release': '1993', 'img': 'http://localhost:5000/static/images/nirvana_inutero.jpg', 'genre': 'rock'},
-        {'artist_name': 'Eminem', 'album_name': 'Marshal Mathers LP', 'date_of_release': '2000', 'img': 'http://localhost:5000/static/images/eminem_mmlp.jpg'},
+        {'artist_name': 'Eminem', 'album_name': 'Marshal Mathers LP', 'date_of_release': '2000', 'img': 'http://localhost:5000/static/images/eminem_mmlp.jpg', 'genre': 'rap'},
 		{'artist_name': 'Eminem', 'album_name': 'Relapse', 'date_of_release': '2009', 'img': 'http://localhost:5000/static/images/eminem_relapse.jpg', 'genre': 'rap'},
 		{'artist_name': 'Adele', 'album_name': '21', 'date_of_release': '2011', 'img': 'http://localhost:5000/static/images/adele_21.jpg', 'genre': 'pop'},
 		{'artist_name': 'Adele', 'album_name': '25', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/adele_25.png', 'genre': 'pop'},
@@ -98,10 +109,11 @@ def genre(genre):
 		{'artist_name': 'Korn', 'album_name': 'Follow the Leader', 'date_of_release': '1998', 'img': 'http://localhost:5000/static/images/korn_ftl.jpg', 'genre': 'rock'},
 		{'artist_name': 'Michael Jackson', 'album_name': 'Thriller', 'date_of_release': '1982', 'img': 'http://localhost:5000/static/images/mj_thriller.png', 'genre': 'pop'},
         {'artist_name': 'Michael Jackson', 'album_name': 'Bad', 'date_of_release': '1987', 'img': 'http://localhost:5000/static/images/mj_bad.png', 'genre': 'pop'},
-		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': '2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'pop'},
-        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'pop'}
+		{'artist_name': 'Kendrick Lamar', 'album_name': 'Good kid, M.A.A.D City', 'date_of_release': '2012', 'img': 'http://localhost:5000/static/images/kl_goodkid.jpg', 'genre': 'rap'},
+        {'artist_name': 'Kendrick Lamar', 'album_name': 'How to pimp a butterfly', 'date_of_release': '2015', 'img': 'http://localhost:5000/static/images/kl_htpab.png', 'genre': 'rap'}
     ]
-    return render_template("genre.html", genrelist=genre)
+    return render_template("genre.html", results=albums, genre=genre)	
+	
 	
 if __name__  == "__main__":
     app.run(host='0.0.0.0 ', debug=True)

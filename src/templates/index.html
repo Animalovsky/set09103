@@ -8,25 +8,22 @@
 <header>
 	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
 	<ul>
-		<a href="{{ url_for('index') }}"><li>Artists</li></a>
+		<a href="{{ url_for('index') }}"><li class="active">Artists</li></a>
 		<a href="/all_artists/albums/"><li>Albums</li></a>
-		<a href="#"><li>Genre</li></a>
+		<a href="/genres/"><li>Genres</li></a>
 	</ul>
 </header>
 <!--This loop display artists-->
 	{% for artists in results %}
-<div class="artist">
-		<h1><a href=/{{ artists.artist_name.replace(" ","%20") }}>{{ artists.artist_name }}</a></h1>
-		<a href=/{{ artists.artist_name }}><img src="{{ artists.img }}"></img></a>
-		<h2>{{ artists.genre }}</h2>
+<div class="genre">
+	<a href=/{{ artists.artist_name.replace(" ","%20") }}><img src="{{ artists.img2 }}" /></a>
 </div>
+
 	{% endfor %}
+
 <footer>
 	<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
 </footer>
+
 </body>
 </html>
-
-
-
-<a href="{{ url_for('index') }}">

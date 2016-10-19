@@ -10,7 +10,7 @@
 	<ul>
 		<a href="{{ url_for('index') }}"><li>Artists</li></a>
 		<a href="/all_artists/albums/"><li>Albums</li></a>
-		<a href="#"><li>Genre</li></a>
+		<a href="/genres/"><li>Genres</li></a>
 	</ul>
 </header>
 <!--This is a loop for the artist photo-->
@@ -36,7 +36,7 @@
 	{% for item in albums if item.artist_name == artist_name %}
 	<div class="artist-album">
 		<a href=/{{ item.artist_name.replace(" ","%20") }}/{{ item.album_name.replace(" ","%20") }}>{{ item.album_name }}</a> ({{ item.date_of_release }})
-		<img src="{{ item.img }}"></img>
+		<a href=/{{ item.artist_name.replace(" ","%20") }}/{{ item.album_name.replace(" ","%20") }}><img src="{{ item.img }}"></img></a>
 	</div>
 	{% endfor %}
 </div>
