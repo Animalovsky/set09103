@@ -14,9 +14,9 @@
 	</ul>
 </header>
 <!--This loop display artists-->
-	{% for artists in results %}
+	{% for data in results %}
 <div class="genre">
-	<a href=/{{ artists.artist_name.replace(" ","%20") }}><img src="{{ artists.img2 }}" /></a>
+	<a href=/{{ data.artist_name.replace(" ","%20") }}><img src="{{ data.img2 }}" /></a>
 </div>
 
 	{% endfor %}

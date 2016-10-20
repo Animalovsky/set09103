@@ -1,20 +1,14 @@
 from  flask  import  Flask , render_template, jsonify, json, url_for
-
+import os
 app = Flask(__name__)
 
 # This is an index route.
 @app.route('/')
 def index():
-    artists = [
-	    {'artist_name': 'Adele', 'img': 'static/images/adele.png', 'img2': 'static/images/adele-home.png', 'genre': 'pop'},
-        {'artist_name': 'Eminem', 'img': 'static/images/eminem.png', 'img2': 'static/images/eminem-home.png', 'genre': 'rap'},
-		{'artist_name': 'Kendrick Lamar', 'img': 'static/images/kl.png', 'img2': 'static/images/kl-home.png', 'genre': 'rap'},
-        {'artist_name': 'Korn', 'img': 'static/images/korn.png', 'img2': 'static/images/korn-home.png', 'genre': 'rock'},
-		{'artist_name': 'Michael Jackson', 'img': 'static/images/mj.png', 'img2': 'static/images/mj-home.png', 'genre': 'pop'},
-		{'artist_name': 'Nirvana', 'img': 'static/images/nirvana.png', 'img2': 'static/images/nirvana-home.png', 'genre': 'rock'}
-    ]
-    return render_template("index.html", results=artists)
-	
+    json_data=open('static/data.json').read()
+    data= json.loads(json_data)
+    return render_template("index.html", results=data)
+
 # This is an artist route.
 @app.route('/<artist_name>/')
 def artist(artist_name):
@@ -116,4 +110,4 @@ def genre(genre):
 	
 	
 if __name__  == "__main__":
-    app.run(host='0.0.0.0 ', debug=True)
+	app.run(host='0.0.0.0 ', debug=True)
