@@ -1,0 +1,32 @@
+[
+   {
+      "artist_name":"Adele",
+      "img_home":"static/images/adele-home.png",
+      "genre":"pop"
+   },
+   {
+      "artist_name":"Eminem",
+      "img_home":"static/images/eminem-home.png",
+      "genre":"rap"
+   },
+   {
+      "artist_name":"Kendrick Lamar",
+      "img_home":"static/images/kl-home.png",
+      "genre":"rap"
+   },
+   {
+      "artist_name":"Korn",
+      "img_home":"static/images/korn-home.png",
+      "genre":"rock"
+   },
+   {
+      "artist_name":"Michael Jackson",
+      "img_home":"static/images/mj-home.png",
+      "genre":"pop"
+   },
+   {
+      "artist_name":"Nirvana",
+      "img_home":"static/images/nirvana-home.png",
+      "genre":"rock"
+   }
+]

@@ -9,14 +9,14 @@
 	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
 	<ul>
 		<a href="{{ url_for('index') }}"><li class="active">Artists</li></a>
-		<a href="/all_artists/albums/"><li>Albums</li></a>
-		<a href="/genres/"><li>Genres</li></a>
+		<a href="{{ url_for('albums') }}"><li>Albums</li></a>
+		<a href="{{ url_for('genres') }}"><li>Genres</li></a>
 	</ul>
 </header>
 <!--This loop display artists-->
 	{% for data in results %}
 <div class="genre">
-	<a href=/{{ data.artist_name.replace(" ","%20") }}><img src="{{ data.img2 }}" /></a>
+	<a href=/{{ data.artist_name.replace(" ","%20") }}><img src="{{ data.img_home }}" /></a>
 </div>
 
 	{% endfor %}

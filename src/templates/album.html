@@ -1,6 +1,6 @@
 <html>
 <head>
-<title>Online Catalogue</title>
+<title>{{ artist_name }} - {{ album_name }}</title>
 <link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
 <meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
@@ -8,17 +8,46 @@
 <header>
 	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
 	<ul>
-		<a href="/all_artists/albums/"><li>Albums</li></a>
-		<a href="#"><li>Genre</li></a>
+		<a href="{{ url_for('index') }}"><li>Artists</li></a>
+		<a href="{{ url_for('albums') }}"><li>Albums</li></a>
+		<a href="{{ url_for('genres') }}"><li>Genres</li></a>
 	</ul>
 </header>
 
-	{% if album %}
-{% for album in album if album.album_name == album_name %}
-	<img src="{{ album.img }}" width=100%></img>
-{% endfor %}
+<div class="album_header">
+	<h1>{{ artist_name }} - {{ album_name }}</h1>
+</div>
+<div class="single_album">
+	<h2>Album cover</h2>
+	{% for album in album if album.album_name == album_name %}
+		<img src="{{ album.img }}"></img>
+	{% endfor %}
+</div>
 
-{% endif %}
+<div class="single_album">
+	 <h2>Track list</h2> 
+	 {% for tracks in tracks if tracks.album_name == album_name %} 
+	 <ol>
+	 <li>{{ tracks[1] }}</li>
+	 </ol>
+	 {% endfor %}
+ </div>
+ 
+<div class="single_album">
+	<h2>recording studio</h2>
+	{% for album in album if album.album_name == album_name %}
+		<p>{{ album.studio }}</p>
+	{% endfor %}
+</div>
+<div class="single_album">
+	<h2>Date of release</h2>
+	{% for album in album if album.album_name == album_name %}
+		<p>{{ album.date_of_release }}</p>
+	{% endfor %}
+</div>
+<div class="album-return">
+<a href=/{{ artist_name.replace(" ","%20") }}>Back to {{ artist_name }}</a>
+</div>
 <footer>
 	<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
 </footer>
