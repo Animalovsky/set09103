@@ -1,30 +1,36 @@
 <html>
 <head>
-<title>{{ artist_name }} {{ album_name }}</title>
-<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Genres</title>
+	<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header>
-	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
-	<ul>
-		<a href="{{ url_for('index') }}"><li>Artists</li></a>
-		<a href="{{ url_for('albums') }}"><li>Albums</li></a>
-		<a href="{{ url_for('genres') }}"><li class="active">Genres</li></a>
-	</ul>
-</header>
+<!--Header-->
+	<header>
+		<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
+		<ul>
+			<a href="{{ url_for('index') }}"><li>Artists</li></a>
+			<a href="{{ url_for('albums') }}"><li>Albums</li></a>
+			<a href="{{ url_for('genres') }}"><li class="active">Genres</li></a>
+		</ul>
+	</header>
+	
 <!--Loop to display all the albums in json-->
-<div class="genre">
-	<a href=/genres/pop><img src="http://localhost:5000/static/images/pop-icon.png" /></a>
-</div>
-<div class="genre">
-	<a href=/genres/rock><img src="http://localhost:5000/static/images/rock-icon.png" /></a>
-</div>
-<div class="genre">
-	<a href=/genres/rap><img src="http://localhost:5000/static/images/rap-icon.png" /></a>
-</div>
-<footer>
-	<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
-</footer>
+	<div class="fullimg">
+		<a href=/genres/pop><img src="http://localhost:5000/static/images/pop-icon.png" /></a>
+	</div>
+	
+	<div class="fullimg">
+		<a href=/genres/rock><img src="http://localhost:5000/static/images/rock-icon.png" /></a>
+	</div>
+	
+	<div class="fullimg">
+		<a href=/genres/rap><img src="http://localhost:5000/static/images/rap-icon.png" /></a>
+	</div>
+
+<!--Footer-->
+	<footer>
+		<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
+	</footer>
 </body>
 </html>

@@ -1,29 +1,30 @@
 <html>
 <head>
-<title>Online Music Catalogue</title>
-<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Online Music Catalogue</title>
+	<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header>
-	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
-	<ul>
-		<a href="{{ url_for('index') }}"><li class="active">Artists</li></a>
-		<a href="{{ url_for('albums') }}"><li>Albums</li></a>
-		<a href="{{ url_for('genres') }}"><li>Genres</li></a>
-	</ul>
-</header>
+<!--Header-->
+	<header>
+		<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
+		<ul>
+			<a href="{{ url_for('index') }}"><li class="active">Artists</li></a>
+			<a href="{{ url_for('albums') }}"><li>Albums</li></a>
+			<a href="{{ url_for('genres') }}"><li>Genres</li></a>
+		</ul>
+	</header>
+
 <!--This loop display artists-->
 	{% for data in results %}
-<div class="genre">
-	<a href=/{{ data.artist_name.replace(" ","%20") }}><img src="{{ data.img_home }}" /></a>
-</div>
-
+		<div class="fullimg">
+			<a href=/{{ data.artist_name.replace(" ","%20") }}><img src="{{ data.img_home }}" /></a>
+		</div>
 	{% endfor %}
-
-<footer>
-	<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
-</footer>
-
+	
+<!--Footer-->
+	<footer>
+		<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
+	</footer>
 </body>
 </html>

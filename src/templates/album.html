@@ -1,55 +1,85 @@
 <html>
 <head>
-<title>{{ artist_name }} - {{ album_name }}</title>
-<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>{{ artist_name }} - {{ album_name }}</title>
+	<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header>
-	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
-	<ul>
-		<a href="{{ url_for('index') }}"><li>Artists</li></a>
-		<a href="{{ url_for('albums') }}"><li>Albums</li></a>
-		<a href="{{ url_for('genres') }}"><li>Genres</li></a>
-	</ul>
-</header>
+<!--Header-->
+	<header>
+		<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
+		<ul>
+			<a href="{{ url_for('index') }}"><li>Artists</li></a>
+			<a href="{{ url_for('albums') }}"><li>Albums</li></a>
+			<a href="{{ url_for('genres') }}"><li>Genres</li></a>
+		</ul>
+	</header>
+	
+<!--Heading-->
+	<div class="heading">
+		<h1>{{ artist_name }} - {{ album_name }}</h1>
+	</div>
 
-<div class="album_header">
-	<h1>{{ artist_name }} - {{ album_name }}</h1>
-</div>
-<div class="single_album">
-	<h2>Album cover</h2>
-	{% for album in album if album.album_name == album_name %}
-		<img src="{{ album.img }}"></img>
-	{% endfor %}
-</div>
+<!--Album information-->	
+	<div class="single_album">
+		<h2>Album cover</h2>
+		{% for albums in albums if albums.album_name == album_name %}
+			<img src="{{ albums.img }}"></img>
+		{% endfor %}
 
-<div class="single_album">
-	 <h2>Track list</h2> 
-	 {% for tracks in tracks if tracks.album_name == album_name %} 
-	 <ol>
-	 <li>{{ tracks[1] }}</li>
-	 </ol>
-	 {% endfor %}
- </div>
- 
-<div class="single_album">
-	<h2>recording studio</h2>
-	{% for album in album if album.album_name == album_name %}
-		<p>{{ album.studio }}</p>
-	{% endfor %}
-</div>
-<div class="single_album">
-	<h2>Date of release</h2>
-	{% for album in album if album.album_name == album_name %}
-		<p>{{ album.date_of_release }}</p>
-	{% endfor %}
-</div>
-<div class="album-return">
-<a href=/{{ artist_name.replace(" ","%20") }}>Back to {{ artist_name }}</a>
-</div>
-<footer>
-	<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
-</footer>
+		<h2>Label</h2>
+		{% for albums in albums if albums.album_name == album_name %}
+			<p>{{ albums.studio }}</p>
+		{% endfor %}
+
+		<h2>Date of release</h2>
+		{% for albums in albums if albums.album_name == album_name %}
+			<p>{{ albums.date_of_release2 }}</p>
+		{% endfor %}
+		
+		<h2>Album Length</h2>
+		{% for tracks in tracks if tracks.album_name == album_name %} 
+			<p>{{ tracks.album_length }}</p>
+		{% endfor %}
+	</div>
+
+<!--Album tracklist-->
+	<div class="single_album">
+		<h2>Track list</h2> 
+		{% for tracks in tracks if tracks.album_name == album_name %} 
+			<ul class="tracks">
+				<li>{{ tracks.tr1 }}</li>
+				<li>{{ tracks.tr2 }}</li>
+				<li>{{ tracks.tr3 }}</li>
+				<li>{{ tracks.tr4 }}</li>
+				<li>{{ tracks.tr5 }}</li>
+				<li>{{ tracks.tr6 }}</li>
+				<li>{{ tracks.tr7 }}</li>
+				<li>{{ tracks.tr8 }}</li>
+				<li>{{ tracks.tr9 }}</li>
+				<li>{{ tracks.tr10 }}</li>
+				<li>{{ tracks.tr11 }}</li>
+				<li>{{ tracks.tr12 }}</li>
+				<li>{{ tracks.tr13 }}</li>
+				<li>{{ tracks.tr14 }}</li>
+				<li>{{ tracks.tr15 }}</li>
+				<li>{{ tracks.tr16 }}</li>
+				<li>{{ tracks.tr17 }}</li>
+				<li>{{ tracks.tr18 }}</li>
+				<li>{{ tracks.tr19 }}</li>		
+				<li>{{ tracks.tr20 }}</li>				
+			</ul>
+		{% endfor %}
+	 </div>
+
+<!--Artist page button-->
+	<div class="album-button">
+		<a href=/{{ artist_name.replace(" ","%20") }}>Back to {{ artist_name }}</a>
+	</div>
+
+<!--Footer-->
+	<footer>
+		<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
+	</footer>
 </body>
 </html>

@@ -1,31 +1,37 @@
 <html>
 <head>
-<title>Albums</title>
-<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
-<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Albums</title>
+	<link type="text/css" rel="stylesheet "href="{{ url_for('static', filename='style.css')}}" />
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 </head>
 <body>
-<header>
-	<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
-	<ul>
-		<a href="{{ url_for('index') }}"><li>Artists</li></a>
-		<a href="{{ url_for('albums') }}"><li class="active">Albums</li></a>
-		<a href="{{ url_for('genres') }}"><li>Genres</li></a>
-	</ul>
-</header>
-<div class="header">
-	<h1>Albums</h1>
-</div>
+<!--Header-->
+	<header>
+		<a href="{{ url_for('index') }}"><h1>Music Catalogue<h1></a>
+		<ul>
+			<a href="{{ url_for('index') }}"><li>Artists</li></a>
+			<a href="{{ url_for('albums') }}"><li class="active">Albums</li></a>
+			<a href="{{ url_for('genres') }}"><li>Genres</li></a>
+		</ul>
+	</header>
+
+<!--Heading-->	
+	<div class="heading">
+		<h1>Albums</h1>
+	</div>
+
 <!--Loop to display all the albums in json-->
 	{% for item in results %}
-<div class="album">
-		<p><a href=/{{ item.artist_name }}>{{ item.artist_name }}</a> - <a href=/{{ item.artist_name.replace(" ","%20") }}/{{ item.album_name.replace(" ","%20") }}>{{ item.album_name }}</a> ({{ item.date_of_release }})</p>
-		<a href=/{{ item.artist_name.replace(" ","%20") }}/{{ item.album_name.replace(" ","%20") }}><img src="{{ item.img }}"></img></a>
-		<a href=/genres/{{ item.genre }}><p>{{ item.genre }}</p></a>
-</div>
+		<div class="album">
+			<p><a href=/{{ item.artist_name.replace(" ","%20") }}>{{ item.artist_name }}</a> - <a href=/{{ item.artist_name.replace(" ","%20") }}/{{ item.album_name.replace(" ","%20") }}>{{ item.album_name }}</a> ({{ item.date_of_release }})</p>
+			<a href=/{{ item.artist_name.replace(" ","%20") }}/{{ item.album_name.replace(" ","%20") }}><img src="{{ item.img }}"></img></a>
+			<a href=/genres/{{ item.genre }}><p>{{ item.genre }}</p></a>
+		</div>
 	{% endfor %}
-<footer>
-	<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
-</footer>
+	
+<!--Footer-->	
+	<footer>
+		<p>&copy; Produced and Designed by Marcin Augustyn, All rights reserved. 2016.</p>
+	</footer>
 </body>
 </html>
