@@ -2,31 +2,44 @@
    {
       "artist_name":"Adele",
       "img_home":"static/images/adele-home.png",
+      "img_artist": "http://localhost:5000/static/images/adele-top.png",
+      "bio": "When the U.K. press began dubbing Adele the next Amy Winehouse in late 2007, the hype didn't touch upon the singer/songwriter influence found in the Londoner's music. Influenced by Roberta Flack and Suzanne Vega as much as Jill Scott, Adele soon became a phenomenon in her own right her second album, 21, eventually sold an estimated 30 million copies worldwide, making her one of the few sales successes in an age of digital streaming.",	  
       "genre":"pop"
    },
    {
       "artist_name":"Eminem",
       "img_home":"static/images/eminem-home.png",
+	  "img_artist": "http://localhost:5000/static/images/eminem-top2.png",
+      "bio": "To call Eminem hip-hop's Elvis is correct to a degree, but it's largely inaccurate. Certainly, Eminem was the first white rapper since the 'Beastie Boys' to garner both sales and critical respect, but his impact exceeded this confining distinction. On sheer verbal skills, Eminem was one of the greatest MCs of his generation rapid, fluid, dexterous, and unpredictable, as withering aside and thanks to his mentor Dr. Dre, he had music to match thick, muscular loops that evoked the terror and paraoia Em's music conjured.",
       "genre":"rap"
    },
    {
       "artist_name":"Kendrick Lamar",
       "img_home":"static/images/kl-home.png",
+	  "img_artist": "http://localhost:5000/static/images/kl-top.png",
+      "bio": "Kendrick Lamar Duckworth, who performs as Kendrick Lamar, was born in Compton, California, on June 17, 1987. After writing stories as a child, he put to music some lyrics about the rough Compton streets he grew up on. He rapped under the name K-Dot, releasing a series of increasingly popular mix tapes, which brought him to the attention of hip-hop super-producer Dr. Dre. Lamar's debut major-label recording, good kid, m.A.A.d City, was released to great acclaim and impressive sales for an up-and-coming recording artist. He continued to receive an array of accolades for his 2015 Grammy-winning album To Pimp a Butterfly.",
       "genre":"rap"
    },
    {
       "artist_name":"Korn",
       "img_home":"static/images/korn-home.png",
+	  "img_artist": "http://localhost:5000/static/images/korn-top.png",
+      "bio": "Korn (sometimes written as KoRn with reversed 'R' to fit their logo) is a Grammy Award-winning band from Bakersfield, California. People often say they created the nu metal genre. Along with other bands of the time, they were influences for a wave of nu metal, alternative metal and rap metal bands through the mid 1990s and early 2000s, helping Limp Bizkit (who were discovered by Korn themselves) and Slipknot more than other bands. Despite this, Korn have been quoted for disliking the term and even being called 'metal'. Jonathan Davis has said that Korn's music can not be classified and that it contains many other influences besides simply 'metal'. The official review on the iTunes Store for their first album goes as far as saying that Korn 'hate the term'. Their first album was first sold in 1994 and also called KoRn. Since then, Korn has sold over 35 millions records worldwide - including 16,5 millions in the U.S., making them one of the best-selling metal acts of the last twelve years.",
       "genre":"rock"
    },
    {
       "artist_name":"Michael Jackson",
       "img_home":"static/images/mj-home.png",
+	  "img_artist": "http://localhost:5000/static/images/mj-top.png",
+      "bio": "Michael Joseph Jackson (August 29, 1958 to June 25, 2009) was an American singer, songwriter, record producer, dancer, and actor. Called the King of Pop, his contributions to music, dance, and fashion along with his publicized personal life made him a global figure in popular culture for over four decades. The eighth child of the Jackson family (one of whom died in infancy), Michael made his professional debut in 1964 with his elder brothers Jackie, Tito, Jermaine, and Marlon as a member of the Jackson 5. He began his solo career in 1971. In the early 1980s, Jackson became a dominant figure in popular music. His music videos, including those of Beat It, Billie Jean, and Thriller from his 1982 album Thriller, are credited with breaking racial barriers and transforming the medium into an art form and promotional tool. The popularity of these videos helped bring the television channel MTV to fame. Jackson's 1987 album Bad spawned the U.S. Billboard Hot 100 number-one singles I Just Can't Stop Loving You, Bad, The Way You Make Me Feel, Man in the Mirror, and Dirty Diana, becoming the first album to have five number-one singles on the Billboard Hot 100. He continued to innovate with videos such as Black or White and Scream throughout the 1990s, and forged a reputation as a touring solo artist. Through stage and video performances, Jackson popularized a number of complicated dance techniques, such as the robot and the moonwalk, to which he gave the name. His distinctive sound and style has influenced numerous artists of various music genres.",
       "genre":"pop"
    },
    {
       "artist_name":"Nirvana",
       "img_home":"static/images/nirvana-home.png",
+	  "img_artist": "http://localhost:5000/static/images/nirvana-top.png",
+      "bio": "Nirvana was an American alternative rock band. They were one of the most successful and influential bands of that time. Since they formed, they have sold over 75 million records all over the world. They played a style of rock music known as grunge, which was highly influenced by 1980s alternative rock, 1970s punk, and heavy metal. Grunge became more commercially successful than the previous punk rock, as promoted to the world by Sub Pop Records. Nirvana greatly affected the style of other grunge bands such as Pearl Jam, Soundgarden, and Alice in Chains. They split up after their lead singer Kurt Cobain died in 1994 after he committed suicide. On April 10, 2014, Nirvana received a star in the Rock and Roll Hall of Fame.",
       "genre":"rock"
    }
 ]
+

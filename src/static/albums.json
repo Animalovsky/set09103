@@ -1,0 +1,97 @@
+	[{
+    	"artist_name": "Nirvana",
+    	"album_name": "Nevermind",
+    	"date_of_release": "1991",
+		"date_of_release2": "September 24, 1991",
+    	"img": "http://localhost:5000/static/images/nirvana_nvm.jpeg",
+    	"genre": "rock",
+		"studio": "DGC Records"
+    }, {
+    	"artist_name": "Nirvana",
+    	"album_name": "In Utero",
+    	"date_of_release": "1993",
+		"date_of_release2": "September 21, 1993",
+    	"img": "http://localhost:5000/static/images/nirvana_inutero.jpg",
+    	"genre": "rock",
+		"studio": "DGC Records"
+    }, {
+    	"artist_name": "Eminem",
+    	"album_name": "The Marshal Mathers LP",
+    	"date_of_release": "2000",
+		"date_of_release2": "May 23, 2000",
+    	"img": "http://localhost:5000/static/images/eminem_mmlp.jpg",
+    	"genre": "rap",
+		"studio": "Aftermath Entertainment, Interscope Records and Shady Records"
+    }, {
+    	"artist_name": "Eminem",
+    	"album_name": "Relapse",
+    	"date_of_release": "2009",
+		"date_of_release2": "May 15, 2009",
+    	"img": "http://localhost:5000/static/images/eminem_relapse.jpg",
+    	"genre": "rap",
+		"studio": "Aftermath Entertainment, Interscope Records and Shady Records"
+    }, {
+    	"artist_name": "Adele",
+    	"album_name": "21",
+    	"date_of_release": "2011",
+		"date_of_release2": "January 24, 2011",
+    	"img": "http://localhost:5000/static/images/adele_21.jpg",
+    	"genre": "pop",
+		"studio": "XL and Columbia"
+    }, {
+    	"artist_name": "Adele",
+    	"album_name": "25",
+    	"date_of_release": "2015",
+		"date_of_release2": "20 November 2015",
+    	"img": "http://localhost:5000/static/images/adele_25.png",
+    	"genre": "pop",
+		"studio": "XL and Columbia"
+    }, {
+    	"artist_name": "Korn",
+    	"album_name": "Life is Peachy",
+    	"date_of_release": "1996",
+		"date_of_release2": "October 15, 1996",
+    	"img": "http://localhost:5000/static/images/korn_lip.jpg",
+    	"genre": "rock",
+		"studio": "Epic Records"
+    }, {
+    	"artist_name": "Korn",
+    	"album_name": "Follow the Leader",
+    	"date_of_release": "1998",
+		"date_of_release2": "August 18, 1998",
+    	"img": "http://localhost:5000/static/images/korn_ftl.jpg",
+    	"genre": "rock",
+		"studio": "Epic/Immortal Records"
+    }, {
+    	"artist_name": "Michael Jackson",
+    	"album_name": "Thriller",
+    	"date_of_release": "1982",
+		"date_of_release2": "November 30, 1982",
+    	"img": "http://localhost:5000/static/images/mj_thriller.png",
+    	"genre": "pop",
+		"studio": "Epic Records"
+    }, {
+    	"artist_name": "Michael Jackson",
+    	"album_name": "Bad",
+    	"date_of_release": "1987",
+		"date_of_release2": "August 31, 1987",
+    	"img": "http://localhost:5000/static/images/mj_bad.png",
+    	"genre": "pop",
+		"studio": "Epic Records"
+    }, {
+    	"artist_name": "Kendrick Lamar",
+    	"album_name": "Good kid, M.A.A.D City",
+    	"date_of_release": "2012",
+		"date_of_release2": "October 22, 2012",
+    	"img": "http://localhost:5000/static/images/kl_goodkid.jpg",
+    	"genre": "rap",
+		"studio": "TDE, Aftermath Entertainment and Interscope Records"
+    }, {
+    	"artist_name": "Kendrick Lamar",
+    	"album_name": "How to pimp a butterfly",
+    	"date_of_release": "2015",
+		"date_of_release2": "March 15, 2015",
+    	"img": "http://localhost:5000/static/images/kl_htpab.png",
+    	"genre": "rap",
+		"studio": "TDE, Aftermath Entertainment and Interscope Records"
+    }]
