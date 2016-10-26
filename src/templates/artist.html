@@ -29,7 +29,7 @@
 			<p>{{ artist.date_of_release }}</p>
 		{% endfor %}
 
-		<h1>albums</h1>
+		<h1>{{ artist_name }}'s albums</h1>
 		
 	<!--This loop displays artist albums-->
 		{% for item in albums if item.artist_name == artist_name %}
